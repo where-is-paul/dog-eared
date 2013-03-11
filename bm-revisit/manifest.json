@@ -2,7 +2,7 @@
   "name": "dog.eared",
   "version": "1.0",
   "description": "An app that forces us chronic bookmarkers to revisit what we've bookmarked.",
-  
+
   "permissions": [
     "bookmarks",
 	"tabs",
@@ -10,13 +10,13 @@
   ],
   
   "background": {
-    "persistent": false,
+    "persistent": true,
     "page": "background.html"
   },
   
   "browser_action": {
-      "default_title": "Bookmark Revisit",
-      "default_icon": "img/book.png"
+      "default_title": "dog.eared",
+      "default_icon": "img/icon.png"
   },
   
   "manifest_version": 2,

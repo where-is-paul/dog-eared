@@ -9,4 +9,4 @@ future features
 
 attributions
 ============
-- currently the css/icons come from bootstrap. these are used for templating purposes only.
+- currently the css/icons come from bootstrap and [glyphicons](http://glyphicons.com/). these are used for templating purposes only.
