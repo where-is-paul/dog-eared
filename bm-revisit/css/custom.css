@@ -1,0 +1,17 @@
+.media {
+	overflow: visible;
+}
+
+.media-body {
+	overflow: visible;
+}
+
+.media-list {
+	margin-left: 5%;
+	margin-right: 5%;
+	list-style: decimal;
+}
+
+.subtext {
+	color: gray;
+}

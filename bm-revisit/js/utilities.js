@@ -23,3 +23,18 @@ function hashCode(str) {
 	}
 	return hash;
 }
+
+function time_diff(earlierDate, laterDate) {
+	var oDiff = new Object();
+	
+	//diff is in seconds
+	var diff = (laterDate.getTime() - earlierDate.getTime())/1000;
+
+	oDiff.years = Math.floor(diff/60/60/24/365);
+	oDiff.days = Math.floor(diff/60/60/24);
+	oDiff.hours = Math.floor(diff/60/60);
+	oDiff.minutes = Math.floor(diff/60);
+
+	return oDiff;
+}
+
