@@ -3,6 +3,10 @@
   "version": "1.0",
   "description": "An app that forces us chronic bookmarkers to revisit what we've bookmarked.",
 
+  "icons": { "16": "img/extension_icon.png",
+			 "48": "img/extension_icon.png",
+			 "128": "img/extension_icon.png"},
+			 
   "permissions": [
     "bookmarks",
 	"tabs",
