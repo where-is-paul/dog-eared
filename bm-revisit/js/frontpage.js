@@ -86,7 +86,7 @@ $('#deletebm .modal-footer .btn-primary').click(deleteBookmark);
 function saveVisit(event) {
 	var id = this.id;
 	addVisit(id, 1);
-	$(this).closest('li').remove();
+	//$(this).closest('li').remove();
 }
 
 function addVisit(id, val) {

@@ -14,7 +14,7 @@ allBookmarks(saveToArray);
 //send bookmarks when extension requests it
 chrome.extension.onMessage.addListener(
 	function(request, sender, sendResponse) {
-		sendResponse({bookmarks: arr});
+		sendResponse({bookmarks: arr.slice(0, 10)});
 	});
 	
 //functions that do all the work
