@@ -15,3 +15,8 @@
 .subtext {
 	color: gray;
 }
+
+.app-name a {
+	color: black; 
+	text-decoration: none;
+}

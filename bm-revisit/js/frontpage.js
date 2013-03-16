@@ -33,8 +33,11 @@ $('#deletebm .modal-footer .btn-primary').click(function() {
 //handles clicking on bookmarks
 $(document).on('click', '.sitelink', saveVisit);
 
+//clicking logo refreshes page.
+$(document).on('click', '.app-name', function() { document.location.reload(true) });
 
 
+var inf = 10000;
 function saveVisit(event) {
 	var id = this.id;
 	addVisit(id, 1);
@@ -69,6 +72,14 @@ function showMeLater() {
 	var id = $(this).closest('li').attr('id');
 	addVisit(id, 2);
 	$(this).closest('li').remove();
+	replaceBookmark(1);
+}
+
+function ignoreForever() {
+	var id = $(this).closest('li').attr('id');
+	addVisit(id, inf);
+	$(this).closest('li').remove();
+	replaceBookmark(1);
 }
 
 function deleteBookmark(button) {
@@ -76,14 +87,14 @@ function deleteBookmark(button) {
 	chrome.bookmarks.remove(id, function() { console.log("bookmark deleted") } );
 	$("li[id="+id+"]").remove();
 	$(button).closest('.modal').modal('hide');
-	addVisit(id, 10000);
+	addVisit(id, inf);
 }
 
 function replaceBookmark(num) {
 	var writeToExistingList = function(bookmark) {
 		//refactor later, this is basically the same as write to list but to an existing list
 		var list = $('ol');
-		if (localStorage[-bookmark.id] >= 10000) return;
+		if (localStorage[-bookmark.id] >= inf) return;
 		
 		var li = createListEntry(bookmark);
 		list.append(li);
@@ -137,6 +148,14 @@ function createListEntry(bookmark) {
 	subtext.append(showlater);
 	
 	subtext.append(" | ");
+	
+	var ignore = $('<a href="#">');
+	ignore.text("ignore forever");
+	ignore.click(ignoreForever);
+	subtext.append(ignore);
+	
+	subtext.append(" | ");
+	
 	var deletebm = $('<a href="#deletebm" role="button" data-toggle="modal">');
 	deletebm.text("delete");
 	subtext.append(deletebm);
