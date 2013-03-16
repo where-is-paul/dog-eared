@@ -12,9 +12,19 @@ var arr = new Array();
 allBookmarks(saveToArray);
 	
 //send bookmarks when extension requests it
+var idx = 0;
 chrome.extension.onMessage.addListener(
 	function(request, sender, sendResponse) {
-		sendResponse({bookmarks: arr.slice(0, 10)});
+		if (request.newlist) {
+			arr.shuffle();
+			sendResponse({bookmarks: arr.slice(0, 10)});
+			idx = 10;
+		}
+		
+		if (request.numreq) {
+			sendResponse({bookmarks: arr.slice(idx, idx + request.numreq)});
+			idx += request.numreq;
+		}
 	});
 	
 //functions that do all the work
