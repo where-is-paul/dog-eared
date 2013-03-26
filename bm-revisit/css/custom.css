@@ -1,3 +1,7 @@
+body {
+	padding-bottom: 5%;
+}
+
 .media {
 	overflow: visible;
 }
@@ -19,4 +23,10 @@
 .app-name a {
 	color: black; 
 	text-decoration: none;
+}
+
+.option-buttons {
+	display: inline;
+	text-align: right;
+	padding: 10px;
 }

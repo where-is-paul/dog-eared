@@ -13,15 +13,17 @@
 	"history"
   ],
   
+  "browser_action": {
+      "default_title": "dog.eared",
+      "default_icon": "img/icon.png"
+  },
+  
   "background": {
     "persistent": true,
     "page": "background.html"
   },
   
-  "browser_action": {
-      "default_title": "dog.eared",
-      "default_icon": "img/icon.png"
-  },
+  "options_page": "options.html",
   
   "web_accessible_resources": [
         "frontpage.html"
