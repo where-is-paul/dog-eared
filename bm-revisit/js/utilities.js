@@ -52,6 +52,6 @@ Array.prototype.shuffle = function() {
 function weightedRandom() {
 	//just implements condition that next element has to come from roughly the next 60% for now.
 	//since the array is sorted by access freq, this preserves some sense of locality.
-	var prob = 0.1 + 0.9 * Math.random();
+	var prob = Math.random();
 	return prob;
 }
