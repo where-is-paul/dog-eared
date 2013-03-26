@@ -1,5 +1,5 @@
 function loadPage() {
-	var list = $('<ol class="media-list">');
+	var list = $('<ol class="media-list" id="bookmark-list">');
 	var writeToList = function(bookmark) {
 		if (localStorage[-bookmark.id] >= 10000) return;
 			
@@ -37,7 +37,10 @@ $(document).on('click', '.sitelink', saveVisit);
 $(document).on('click', '.app-name', function() { document.location.reload(true) });
 
 $(window).scroll(function () { 
-   if (window.innerHeight + $(document).scrollTop() >= $(document).height() ) {
+	if (window.innerHeight + $(document).scrollTop() >= $(document).height() ) {
+		if ($('#bookmark-list > li').length % 10 == 0) {
+			$('#bookmark-list').append('<hr>');
+		}
 		replaceBookmark(1);
-   }
+	}
 });
