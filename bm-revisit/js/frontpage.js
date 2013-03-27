@@ -38,9 +38,6 @@ $(document).on('click', '.app-name', function() { document.location.reload(true)
 
 $(window).scroll(function () { 
 	if (window.innerHeight + $(document).scrollTop() >= $(document).height() - 10) {
-		if ($('#bookmark-list > li').length % 10 == 0) {
-			$('#bookmark-list').append('<hr style="margin-left: -5%; margin-right: -5%">');
-		}
 		replaceBookmark(1);
 	}
 });

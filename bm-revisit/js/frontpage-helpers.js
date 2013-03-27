@@ -62,9 +62,16 @@ function deleteBookmark(button) {
 
 //functions to write bookmarks to page
 function replaceBookmark(num) {
+	var list = $('#bookmark-list');
+	var first = list.contents()[0];
+	if (first.tagName == "HR") first.remove();
+	if ($('#bookmark-list > li').length % 10 == 0) {
+		$('#bookmark-list').append('<hr style="margin-left: -5%; margin-right: -5%">');
+	}
+	
 	var writeToExistingList = function(bookmark) {
 		//refactor later, this is basically the same as write to list but to an existing list
-		var list = $('ol');
+		var list = $('#bookmark-list');
 		if (localStorage[-bookmark.id] >= inf) return;
 		
 		var li = createListEntry(bookmark);
