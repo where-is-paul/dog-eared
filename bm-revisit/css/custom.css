@@ -1,5 +1,6 @@
 body {
 	padding-bottom: 5%;
+	background-color: rgba(241, 240, 240, 0.71);
 }
 
 .media {
@@ -22,7 +23,8 @@ body {
     display: table-cell;
     vertical-align: middle;
 	padding-top: 20px;
-	line-height: 50px;
+	line-height: 52px;
+	font-size: 42px;
 }
 
 .nav-name a {
@@ -34,6 +36,8 @@ body {
 	border: 0px;
 	padding-bottom: 1%;
 	padding-left: 5%;
+	border-bottom: 1px solid #d4d4d4;
+	background-color: rgb(253, 253, 253);
 }
 
 .menu-icons {
@@ -45,6 +49,20 @@ body {
 	padding: 0px;
 	border: 0px;
 	margin: 0px;
+}
+
+.container {
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+#bookmarks .table {
+	border: 1px solid #d4d4d4;
+	background-color: rgb(253, 253, 253);
+}
+
+#bookmarks .table td {
+	padding: 10px 14px 10px 14px;
 }
 
 .tint {  
@@ -80,7 +98,7 @@ body {
 }
 
 @media (min-width: 979px) {
-	#bookmarks {
-		margin-top: 12%;
+	#bookmarks table {
+		margin-top: 13%;
 	}
 }
