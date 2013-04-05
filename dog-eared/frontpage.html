@@ -10,6 +10,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="css/custom.css" rel="stylesheet"/>
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet"/>
+	<link href="css/jquery.pageslide.css" rel="stylesheet">
 	
 	
 	<link rel="icon" type="image/x-icon" href="img/book.png">
@@ -19,14 +20,16 @@
 	<div class="navbar">
 		<div class="navbar-inner navbar-fixed-top">
 			<ul class="menu-icons">
+				<a href="search.html" class="slide-over">
+					<span class="tint">
+						<img class="btn option-btn" src="http://placehold.it/100x100&text=search">
+					</span>
+				</a>
 				<span class="tint">
 					<img class="btn option-btn" src="http://placehold.it/100x100&text=settings">
 				</span>
 				<span class="tint">
 					<img class="btn option-btn" src="http://placehold.it/100x100&text=share">
-				</span>
-				<span class="tint">
-					<img class="btn option-btn" src="http://placehold.it/100x100&text=donate">
 				</span>
 			</ul>
 			
@@ -44,6 +47,7 @@
 	</div>
 	
 	<div class = "container" id="bookmarks">
+		<div id="pageslide"></div>
 	</div>
 
 	<!-- Modal for delete dialog -->
@@ -65,6 +69,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/utilities.js"></script>
+	<script src="js/jquery.pageslide.js"></script>
 	<script src="js/frontpage-helpers.js"></script>
 	<script src="js/frontpage.js"></script>
 	

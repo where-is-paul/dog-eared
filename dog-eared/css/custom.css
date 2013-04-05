@@ -3,6 +3,10 @@ body {
 	background-color: rgba(241, 240, 240, 0.71);
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 .media {
 	overflow: visible;
 }
@@ -43,22 +47,31 @@ body {
 .menu-icons {
 	float: right;
 	margin-top: 20px;
+	text-decoration: none;
 }
 
-.navbar .option-btn {
+.menu-icons a:hover {
+	color: transparent;
+	text-decoration: none;
+}
+
+.search-icons {
+	float: right;
+	text-decoration: none;
+}
+
+.option-btn {
 	padding: 0px;
 	border: 0px;
 	margin: 0px;
 }
 
 .container {
-	margin-left: 5%;
-	margin-right: 4%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #bookmarks .table {
-	width: 95%;
-	max-width: 95%;
 	border: 1px solid #d4d4d4;
 	background-color: rgb(253, 253, 253);
 	table-layout: fixed;
@@ -106,6 +119,6 @@ body {
 
 @media (min-width: 979px) {
 	#bookmarks table {
-		margin-top: 13%;
+		margin-top: 165px;
 	}
 }

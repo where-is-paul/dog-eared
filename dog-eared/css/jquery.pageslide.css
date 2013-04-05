@@ -1,0 +1,21 @@
+#pageslide {
+    /* These styles MUST be included. Do not change. */
+    display: none;
+    position: absolute;
+    position: fixed;
+    height: 100%;
+	
+	border: 1px solid #d4d4d4;
+	background-color: rgb(253, 253, 253);
+    /* These styles are optional, and describe how the pageslide will look */
+    color: #FFF;
+	
+	width: 30%;
+	min-width: 300px;
+}
+
+@media (min-width: 979px) {
+	#pageslide {
+		margin-top: 165px;
+	}
+}

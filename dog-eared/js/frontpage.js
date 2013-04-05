@@ -18,6 +18,9 @@ function loadPage() {
 
 loadPage();
 
+//slideover options page
+$("a.slide-over").pageslide({ direction: "left"});
+
 //old newtab button
 $('.default-newtab').click(function() {
 		chrome.tabs.update({ "url": "chrome-internal://newtab/"});

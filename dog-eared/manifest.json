@@ -22,9 +22,7 @@
     "persistent": true,
     "page": "background.html"
   },
-  
-  "options_page": "options.html",
-  
+    
   "web_accessible_resources": [
         "frontpage.html"
    ],
