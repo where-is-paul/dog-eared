@@ -1,10 +1,10 @@
 function loadPage() {
-	var list = $('<ol class="media-list" id="bookmark-list">');
+	var list = $('<table class="table table-hover" id="bookmark-list">');
 	var writeToList = function(bookmark) {
 		if (localStorage[-bookmark.id] >= 10000) return;
 			
-		var li = createListEntry(bookmark);
-		list.append(li);
+		var tr = createListEntry(bookmark);
+		list.append(tr);
 	}
 
 	chrome.extension.sendMessage({newlist: true}, function(response) {
@@ -18,12 +18,24 @@ function loadPage() {
 
 loadPage();
 
+//old newtab button
+$('.default-newtab').click(function() {
+		chrome.tabs.update({ "url": "chrome-internal://newtab/"});
+	}
+);
+
 //bookmark deletion dialog.
 $(document).on('click', 'a[href=#deletebm]', function () {
-	var id = $(this).closest('li').attr('id');
+	var tr = $(this).closest('tr');
+	var id = tr.attr('id');
+	
+	// var title = li.find('a')[0].text;
+	// $(".modal-body").append(title);
+	
 	$(".modal-footer").attr('id', id );
 	$('#deletebm').modal('show');
 }); 
+
 $('#deletebm .modal-footer .btn-primary').click(function() {
 		deleteBookmark(this);
 		replaceBookmark(1);

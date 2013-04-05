@@ -15,48 +15,61 @@
 	
 </head>
 <body>
-
-<div class="container">	
-	<div id="bookmarks">
-		
-			
-		<div class="page-header">
+	<div class="navbar">
+		<div class="navbar-inner navbar-fixed-top">
+			<ul class="menu-icons">
+				<span class="tint">
+					<img class="btn option-btn" src="http://placehold.it/100x100&text=options">
+				</span>
+				<span class="tint">
+					<img class="btn option-btn" src="http://placehold.it/100x100&text=other+stuff">
+				</span>
+				<span class="tint">
+					<img class="btn option-btn" src="http://placehold.it/100x100&text=more+stuff">
+				</span>
+			</ul>
 			
 			<h1 class="app-name">
 				<a href="#">dog.eared</a>
+				<small class="subtext">Revisiting your bookmarks since 2013.</small>
 			</h1>
-			
-			<small class="subtext">Revisiting your bookmarks since 2013.</small>
-			
 			
 		</div>
 		
-		
 	</div>
-	<hr>
-</div>
+	
+	<div class="tint default-newtab">
+		<img src="http://placehold.it/200x50&text=old+newtab+page">
+	</div>
+	
+	<div class="container">	
+		<div id="bookmarks">
+			
+		</div>
+		<hr>
+	</div>
 
-<!-- Modal for delete dialog -->
-<div id="deletebm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="deletebmlabel" aria-hidden="true">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-		<h3 id="deletebmlabel">Delete this bookmark?</h3>
+	<!-- Modal for delete dialog -->
+	<div id="deletebm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="deletebmlabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="deletebmlabel">Delete this bookmark?</h3>
+		</div>
+		<div class="modal-body" id="bmId">
+			<p>Are you sure you want to delete this bookmark?</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">No, take me back!</button>
+			<button class="btn btn-primary">Yes, do it!</button>
+		</div>
 	</div>
-	<div class="modal-body" id="bmId">
-		<p>Are you sure you want to delete this bookmark?</p>
-	</div>
-	<div class="modal-footer">
-		<button class="btn" data-dismiss="modal" aria-hidden="true">No, take me back!</button>
-		<button class="btn btn-primary">Yes, do it!</button>
-	</div>
-</div>
 
-<!-- JS -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/utilities.js"></script>
-<script src="js/frontpage-helpers.js"></script>
-<script src="js/frontpage.js"></script>
+	<!-- JS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/utilities.js"></script>
+	<script src="js/frontpage-helpers.js"></script>
+	<script src="js/frontpage.js"></script>
 	
 </body>
 </html>

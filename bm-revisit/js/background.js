@@ -16,7 +16,7 @@ var idx = 0;
 chrome.extension.onMessage.addListener(
 	function(request, sender, sendResponse) {
 		if (request.newlist) {
-			arr.shuffle();
+			arr = arr.shuffle();
 			sendResponse({bookmarks: arr.slice(0, 10)});
 			idx = 10;
 		}

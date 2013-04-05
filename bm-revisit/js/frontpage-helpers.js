@@ -35,23 +35,23 @@ function bestTime(timeDiff) {
 }
 
 function showMeLater() {
-	var id = $(this).closest('li').attr('id');
+	var id = $(this).closest('tr').attr('id');
 	addVisit(id, 2);
-	$(this).closest('li').remove();
+	$(this).closest('tr').remove();
 	replaceBookmark(1);
 }
 
 function ignoreForever() {
-	var id = $(this).closest('li').attr('id');
+	var id = $(this).closest('tr').attr('id');
 	addVisit(id, inf);
-	$(this).closest('li').remove();
+	$(this).closest('tr').remove();
 	replaceBookmark(1);
 }
 
 function deleteBookmark(button) {
 	var id = $(button).closest('.modal-footer').attr('id');
 	chrome.bookmarks.remove(id, function() { console.log("bookmark deleted") } );
-	$("li[id="+id+"]").remove();
+	$("tr[id="+id+"]").remove();
 	$(button).closest('.modal').modal('hide');
 	addVisit(id, inf);
 }
@@ -62,20 +62,13 @@ function deleteBookmark(button) {
 
 //functions to write bookmarks to page
 function replaceBookmark(num) {
-	var list = $('#bookmark-list');
-	var first = list.contents()[0];
-	if (first.tagName == "HR") first.remove();
-	if ($('#bookmark-list > li').length % 10 == 0) {
-		$('#bookmark-list').append('<hr style="margin-left: -5%; margin-right: -5%">');
-	}
-	
 	var writeToExistingList = function(bookmark) {
 		//refactor later, this is basically the same as write to list but to an existing list
 		var list = $('#bookmark-list');
 		if (localStorage[-bookmark.id] >= inf) return;
 		
-		var li = createListEntry(bookmark);
-		list.append(li);
+		var tr = createListEntry(bookmark);
+		list.append(tr);
 	}
 	
 	chrome.extension.sendMessage({numreq: num}, function(response) {
@@ -84,11 +77,11 @@ function replaceBookmark(num) {
 }
 
 //the bulk of the bookmark creation code.
-//creates and styles an <li> entry for the bookmark list
+//creates and styles an <tr> entry for the bookmark list
 function createListEntry(bookmark) {
 	//making media components (basic components of a post)
-	var body = $('<div class="media-body">');
-	var title = $('<h4 class="media-heading">');
+	var body = $('<div>');
+	var title = $('<h4>');
 	
 	//add link to bookmark below
 	var anchor = $('<a>');
@@ -145,12 +138,15 @@ function createListEntry(bookmark) {
 	// var img = $('<img class="media-object" src="http://placehold.it/32x32">');
 	// img_holder.append(img);
 			
-	var li = $('<li class="media">');
-	li.attr('id', bookmark.id);
+	var tr = $('<tr>');
+	var td = $('<td>');
+	tr.attr('id', bookmark.id);
 	// li.append(img_holder);
-	li.append(body);
 	
-	return li;
+	td.append(body);
+	tr.append(td);
+	
+	return tr;
 }
 
 //-----------------------------------------------//

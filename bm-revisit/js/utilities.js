@@ -41,17 +41,25 @@ function time_diff(earlierDate, laterDate) {
 //fisher-yeats random shuffle
 Array.prototype.shuffle = function() {
     for (var i = this.length - 1; i > 0; i--) {
-        var j = Math.floor(weightedRandom() * (i + 1));
+		//may consider using a distribution weighted by access frequencies
+        var j = Math.floor(Math.random() * (i + 1));
         var temp = this[i];
         this[i] = this[j];
         this[j] = temp;
     }
-    return this;
-}
-
-function weightedRandom() {
-	//just implements condition that next element has to come from roughly the next 60% for now.
-	//since the array is sorted by access freq, this preserves some sense of locality.
-	var prob = Math.random();
-	return prob;
+	
+	var unaccessed = [];
+	var accessed = [];
+	for (var i = 0; i < this.length; i++) {
+		var id = -parseInt(this[i].id);
+		var freq = localStorage[id];
+		if (freq == 0) {
+			unaccessed.push(this[i]);
+		} else {
+			accessed.push(this[i]);
+		}
+	}
+	
+	accessed.sort();
+    return unaccessed.concat(accessed);
 }

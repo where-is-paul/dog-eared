@@ -1,6 +1,6 @@
 {
   "name": "dog.eared",
-  "version": "1.1",
+  "version": "1.2",
   "description": "An app that forces us chronic bookmarkers to revisit what we've bookmarked.",
 
   "icons": { "16": "img/extension_icon.png",

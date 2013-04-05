@@ -10,11 +10,6 @@ body {
 	overflow: visible;
 }
 
-.media-list {
-	margin-left: 5%;
-	margin-right: 5%;
-	list-style: decimal;
-}
 
 .subtext {
 	color: gray;
@@ -23,10 +18,69 @@ body {
 .app-name a {
 	color: black; 
 	text-decoration: none;
+	min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+	padding-top: 20px;
+	line-height: 50px;
 }
 
-.option-buttons {
-	display: inline;
-	text-align: right;
-	padding: 10px;
+.nav-name a {
+	color: white;
+	text-decoration: none;
+}
+
+.navbar-inner {
+	border: 0px;
+	padding-bottom: 1%;
+	padding-left: 5%;
+}
+
+.menu-icons {
+	float: right;
+	margin-top: 20px;
+}
+
+.navbar .option-btn {
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+}
+
+.tint {  
+    position: relative;  
+    cursor: pointer;  
+	display: inline-block;  
+}  
+  
+.tint:before {  
+    content: "";  
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    background: rgba(255,255,255, 0.4);  
+    -moz-transition: background .3s linear;  
+    -webkit-transition: background .3s linear;  
+    -ms-transition: background .3s linear;  
+    -o-transition: background .3s linear;  
+    transition: background .3s linear;  
+}  
+  
+.tint:hover:before {  
+    background: rgba(255,255,255, 0.1);   
+}
+
+.default-newtab {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	border: 0px;
+}
+
+@media (min-width: 979px) {
+	#bookmarks {
+		margin-top: 12%;
+	}
 }
