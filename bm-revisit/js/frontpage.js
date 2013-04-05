@@ -50,6 +50,6 @@ $(document).on('click', '.app-name', function() { document.location.reload(true)
 
 $(window).scroll(function () { 
 	if (window.innerHeight + $(document).scrollTop() >= $(document).height() - 10) {
-		replaceBookmark(1);
+		replaceBookmark(5);
 	}
 });

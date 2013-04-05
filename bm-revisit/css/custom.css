@@ -52,13 +52,16 @@ body {
 }
 
 .container {
-	margin-left: 8%;
-	margin-right: 8%;
+	margin-left: 5%;
+	margin-right: 4%;
 }
 
 #bookmarks .table {
+	width: 95%;
+	max-width: 95%;
 	border: 1px solid #d4d4d4;
 	background-color: rgb(253, 253, 253);
+	table-layout: fixed;
 }
 
 #bookmarks .table td {
@@ -95,6 +98,10 @@ body {
 	bottom: 0px;
 	right: 0px;
 	border: 0px;
+}
+
+.sitelink {
+	word-wrap: break-word;
 }
 
 @media (min-width: 979px) {
