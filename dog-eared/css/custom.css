@@ -3,10 +3,6 @@ body {
 	background-color: rgba(241, 240, 240, 0.71);
 }
 
-::-webkit-scrollbar { 
-    display: none; 
-}
-
 .media {
 	overflow: visible;
 }
