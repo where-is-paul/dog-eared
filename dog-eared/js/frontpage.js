@@ -1,5 +1,11 @@
-function loadPage() {
-	var list = $('<table class="table table-hover" id="bookmark-list">');
+function loadPage(settings) {
+	if (settings.newpage) {
+		var list = $('<table class="table table-hover" id="bookmark-list">');
+	} else {
+		var list = $('#bookmark-list');
+		list.empty();
+	}
+	
 	var writeToList = function(bookmark) {
 		if (localStorage[-bookmark.id] >= 10000) return;
 			
@@ -7,19 +13,18 @@ function loadPage() {
 		list.append(tr);
 	}
 
-	chrome.extension.sendMessage({newlist: true}, function(response) {
+	chrome.extension.sendMessage({newlist: true, shuffle: settings.randomize}, function(response) {
 		response.bookmarks.forEach(writeToList);
 	});
 
-	$(document).ready(function () {
-		$('#bookmarks').append(list);
-	});
+	if (settings.newpage) {
+		$(document).ready(function () {
+			$('#bookmarks').append(list);
+		});
+	}
 }
 
-loadPage();
-
-//slideover options page
-$("a.slide-over").pageslide({ direction: "left"});
+loadPage({randomize: true, newpage: true});
 
 //old newtab button
 $('.default-newtab').click(function() {

@@ -3,14 +3,15 @@ body {
 	background-color: rgba(241, 240, 240, 0.71);
 }
 
-.media {
-	overflow: visible;
+.navbar-search .search-query {
+	font-size: 14px;
+	line-height: inherit;
+	width: 278px !important;
 }
 
-.media-body {
-	overflow: visible;
+.navbar-search {
+	float: none;
 }
-
 
 .subtext {
 	color: gray;
@@ -22,7 +23,7 @@ body {
 	min-height: 10em;
     display: table-cell;
     vertical-align: middle;
-	padding-top: 20px;
+	padding-top: 18px;
 	line-height: 52px;
 	font-size: 42px;
 }
@@ -80,7 +81,7 @@ body {
 .tint {  
     position: relative;  
     cursor: pointer;  
-	display: inline-block;  
+	display: inline-block;
 }  
   
 .tint:before {  
@@ -102,19 +103,22 @@ body {
     background: rgba(255,255,255, 0.1);   
 }
 
-.default-newtab {
-	position: fixed;
-	bottom: 0px;
-	right: 0px;
-	border: 0px;
-}
-
 .sitelink {
 	word-wrap: break-word;
 }
 
+.big-font {
+	font-size: 58px;
+}
+
+.square {
+	text-align: center;
+	width: 66.5px;
+	height: 66.5px;
+}
+
 @media (min-width: 979px) {
 	#bookmarks table {
-		margin-top: 165px;
+		margin-top: 195px;
 	}
 }

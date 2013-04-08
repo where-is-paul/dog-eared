@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>dog.eared</title>
@@ -10,7 +11,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="css/custom.css" rel="stylesheet"/>
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet"/>
-	<link href="css/jquery.pageslide.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
 	
 	
 	<link rel="icon" type="image/x-icon" href="img/book.png">
@@ -20,34 +21,36 @@
 	<div class="navbar">
 		<div class="navbar-inner navbar-fixed-top">
 			<ul class="menu-icons">
-				<a href="search.html" class="slide-over">
-					<span class="tint">
-						<img class="btn option-btn" src="http://placehold.it/100x100&text=search">
-					</span>
-				</a>
-				<span class="tint">
-					<img class="btn option-btn" src="http://placehold.it/100x100&text=settings">
+				<form class="navbar-search">
+					<div class="input-append">
+						<input type="text" class="span2 search-query" placeholder="Search bookmarks">
+					</div>
+				</form>
+				<span title="About" class="tint square">
+					<i class="icon-info-sign big-font option-btn"></i>
 				</span>
-				<span class="tint">
-					<img class="btn option-btn" src="http://placehold.it/100x100&text=share">
+				<span title="Settings" class="tint square">
+					<i class="icon-cogs big-font option-btn"></i>
+				</span>
+				<span title="Share" class="tint square">
+					<i class="icon-share big-font option-btn"></i>
+				</span>
+				<span title="Default newtab" class="tint square default-newtab">
+					<i class="icon-folder-close-alt big-font option-btn"></i>
 				</span>
 			</ul>
 			
 			<h1 class="app-name">
-				<a href="#">dog.eared</a>
+				<a href="#"><i class="icon-bookmark"></i> dog.eared</a>
 				<small class="subtext">Revisiting your bookmarks since 2013.</small>
 			</h1>
+			
 			
 		</div>
 		
 	</div>
 	
-	<div class="tint default-newtab">
-		<img src="http://placehold.it/200x50&text=old+newtab+page">
-	</div>
-	
 	<div class = "container" id="bookmarks">
-		<div id="pageslide"></div>
 	</div>
 
 	<!-- Modal for delete dialog -->
@@ -69,9 +72,9 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/utilities.js"></script>
-	<script src="js/jquery.pageslide.js"></script>
 	<script src="js/frontpage-helpers.js"></script>
 	<script src="js/frontpage.js"></script>
+	<script src="js/search.js"></script>
 	
 </body>
 </html>
