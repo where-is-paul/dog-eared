@@ -1,24 +1,32 @@
+/*generic styles*/
 body {
 	padding-bottom: 5%;
 	background-color: rgba(241, 240, 240, 0.71);
 }
 
+a:hover {
+	text-decoration: none;
+}
+
+/*navbar settings*/
 .navbar-search .search-query {
 	font-size: 14px;
 	line-height: inherit;
-	width: 278px !important;
+	/*width is 278 to accomodate for 4 icons of roughly 70px*/
+	width: 278px !important; 
 }
 
 .navbar-search {
 	float: none;
 }
 
+/*logo stylings*/
 .subtext {
 	color: gray;
 }
 
 .app-name a {
-	color: black; 
+	color: green; 
 	text-decoration: none;
 	min-height: 10em;
     display: table-cell;
@@ -26,6 +34,10 @@ body {
 	padding-top: 18px;
 	line-height: 52px;
 	font-size: 42px;
+}
+
+.orange {
+	color: #e78b24;
 }
 
 .nav-name a {
@@ -39,8 +51,10 @@ body {
 	padding-left: 5%;
 	border-bottom: 1px solid #d4d4d4;
 	background-color: rgb(253, 253, 253);
+	background-image: none;
 }
 
+/*menu icons*/
 .menu-icons {
 	float: right;
 	margin-top: 20px;
@@ -63,6 +77,7 @@ body {
 	margin: 0px;
 }
 
+/*main page stylings*/
 .container {
 	margin-left: auto;
 	margin-right: auto;
@@ -78,6 +93,7 @@ body {
 	padding: 10px 14px 10px 14px;
 }
 
+/*highlighting effects when hovering over buttons*/
 .tint {  
     position: relative;  
     cursor: pointer;  
@@ -107,6 +123,8 @@ body {
 	word-wrap: break-word;
 }
 
+
+/*icon font size*/
 .big-font {
 	font-size: 58px;
 }
@@ -117,6 +135,7 @@ body {
 	height: 66.5px;
 }
 
+/*responsive sizing*/
 @media (min-width: 979px) {
 	#bookmarks table {
 		margin-top: 195px;

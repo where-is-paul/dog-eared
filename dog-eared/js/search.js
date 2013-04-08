@@ -29,5 +29,15 @@ function refreshList(bookmarks) {
 	}
 	
 	bookmarks.forEach(writeToList);
+	if (bookmarks.length == 0) {
+		var tr = $('<tr>');
+		var td = $('<td>');
+		var subtext = $('<div class="subtext">');
+		subtext.append("No results found.");
+		td.append(subtext);
+		tr.append(td);
+		
+		list.append(tr);
+	}
 	//$('#bookmarks').append(list);
 }
